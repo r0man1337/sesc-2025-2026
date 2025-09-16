@@ -1,0 +1,26 @@
+name: Validate Submissions
+on:
+  pull_request:
+    paths:
+      - 'submissions/**'
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate structure
+        run: |
+          set -e
+          CHANGED=$(git diff --name-only origin/${{ github.base_ref }}... | grep '^submissions/' | cut -d/ -f1-4 | sort -u || true)
+          if [ -z "$CHANGED" ]; then
+            echo "No submission paths changed."; exit 1
+          fi
+          FAIL=0
+          regex='^submissions/(practice|homework|project)/[0-9]{4}-[0-9]{2}-[0-9]{2}__[a-z0-9-]+/[A-Z][a-z]+(-[A-Z][a-z]+){1,2}$'
+          for p in $CHANGED; do
+            if [[ ! $p =~ $regex ]]; then
+              echo "Invalid path: $p"; FAIL=1; continue
+            fi
+            [ -f "$p/REPORT.md" ] || { echo "Missing REPORT.md in $p"; FAIL=1; }
+          done
+          exit $FAIL
