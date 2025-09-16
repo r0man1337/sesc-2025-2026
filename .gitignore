@@ -68,3 +68,5 @@ Thumbs.db
 *.tmp
 
 # Образцы из GitHub .gitignore (https://github.com/github/gitignore)
+
+.AVD
