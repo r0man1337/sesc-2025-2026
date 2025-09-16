@@ -1,11 +1,9 @@
-### Work Info
-- **Type**: (practice | homework | project)
-- **Date**: YYYY-MM-DD
-- **Assignment ID**: e.g. `loops-intro`
-- **Author (ФИО)**: Ivanov-Ivan
-- **Path**: `submissions/<type>/<date>__<assignment-id>/<Фамилия-Имя>/`
+### Информация о работе
+- **Тип работы**: (practice | homework | project)
+- **Дата работы**: YYYY-MM-DD
+- **Название**: e.g. `Структуры данных`
+- **Автор (ФИО)**: Ivanov-Ivan
 
-### Checklist
+### Чеклист
 - [ ] Файлы на своих местах и названы верно
 - [ ] Есть `REPORT.md`
-- [ ] Прошли автопроверки (CI)
