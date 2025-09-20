@@ -62,8 +62,8 @@ submissions/
 
 ### Первичная настройка
 ```bash
-git config --global user.name "Ivan Ivanov"
-git config --global user.email "ivan@example.com"
+git config --global user.name "Alexandr Moiseenko"
+git config --global user.email "naight999@mail.ru"
 ```
 
 ### Основные команды
